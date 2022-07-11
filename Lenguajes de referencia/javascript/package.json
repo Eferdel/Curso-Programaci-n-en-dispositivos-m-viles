@@ -1,0 +1,19 @@
+{
+  "name": "03-javascript",
+  "version": "1.0.0",
+  "description": "Curso de react native con JS",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "native"
+  ],
+  "author": "Israel Parra",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
+}

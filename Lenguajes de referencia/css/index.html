@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trabajando con CSS</title>
+  <style>
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      text-decoration: underline;
+      color: dimgray;
+    }
+    p {
+        font-size: 14px;
+        color: darkgray;
+        font-family: "Arial", sans-serif;
+        font-style: italic;
+    }
+  /* Las clases de html se definen en css con puntos */
+  /* Los id se definen en css con # */
+  /* Cada id defindio en el css debe ser único */
+  /* Si queremos aplicar un mismo estilo a id iguales, es mas adecuado crear clases*/
+    .box { 
+        width: 10%; /*hace referencia al ancho del documento*/
+        text-align: center;
+        background: crimson;
+        color: white;
+        border-radius: 10px;
+        padding: 10px; /*Espaciado de la fuente respecto de la caja */
+        font-size: 12px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        float: left; /*Elementos flotantes, no se salta de línea*/
+    }
+
+    #user-card {
+      width: 20%;
+      text-align: center;
+      background-color: forestgreen;
+      color: darkgray;
+      border: 1px solid black;
+      padding: 5px;
+    }
+    #user-card h3 {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Esto es el encabezado principal</h1>
+  <p>Esto es un párrafo</p>
+
+  <div style="width: 100%">
+    <div class="box">
+      Esto es una caja de contenido
+    </div>
+    <div class="box">
+      Esto es otra caja de contenido
+    </div>
+    <div class="box">
+      Esto es otra caja más de contenido
+    </div>
+  </div>
+
+  <br /><br /><br /><br />
+
+  <div id="user-card"> 
+    <h3>Israel Parra</h3>
+  </div>
+</body>
+</html>
