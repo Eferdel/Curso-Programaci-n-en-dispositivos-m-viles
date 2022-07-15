@@ -1,0 +1,65 @@
+REACT NATIVE es una librería, no un framework por lo que podemos definir nuestro propio árbol de directorios
+
+Vamos a incluir siempre un diretorio src con toda la ógica de nuestra aplicación.
+
+En ella, meteremos los siguientes directorios
+	- screens
+		· auth
+		· ads
+	- navigations
+		· pilas (stacks)
+	- providers <- nos dirá si el usuario está o no identificado adecuadmente
+	- services <- servicios para mostrar anunios y ver anuncios
+	- reducers <- Gestión del estado de la aplicación (acciones que ejecutaremos para alterar nuestra información, por ejemplo, cambiar la app si el ususario está autentificado)
+	- componentes
+		· inputs
+	- utils <- gestionar errores y gestionarlos con axios
+	- theme <- Temas de la app "definir colores y fuentes globales, casi cualquier cosa"
+
+
+instalar dependencias nativas con expo (para acceder a los recursos del dispositivo)
+https://docs.expo.dev/versions/latest/
+
+Comandos para instalar las dependencias nativas:
+
+expo install expo-app-loading
+expo install expo-secure-store
+expo install expo-font @expo-google-fonts/lato
+expo install react-native-gesture-handler 
+expo install react-native-reanimated   <- Navegación, no la usamos nosostros directamente, pero si las usan otras
+expo install react-native-screens   <- Idem que la anterior
+expo install react-native-safe-area-context  <- Mostrar bien la aplicación en cualquier dispositivos
+expo install expo-constants <- permite recuperar información de forma segura de nuestra aplicación instalada en el usuario
+
+
+Instalar dependencias externas
+https://reactnativeelements.com/docs/installation
+ReactNative ya tienes unas cuantas
+
+Comandos para instalar las dependencias del cliente con yarn, si utilizas npm, reemplazar yarn add por npm install y yarn por npm install:
+
+yarn add @rneui/themed @rneui/base
+
+Si falla el anterior proceso de instalación de RNE entonces hacer lo siguiente:
+
+rm -rf node_modules yarn.lock package-lock.json  <- Si hubiera algún error, borramos todos estos archivos.
+yarn && yarn add @rneui/base @rneui/themedInstalar el resto de dependencias:
+
+yarn add react-native-extended-stylesheet
+yarn add @react-navigation/native
+yarn add @react-navigation/drawer
+yarn add @react-navigation/bottom-tabs
+yarn add @react-navigation/native-stack <- acumular pilas de pantalls
+yarn add axios <- cliente http que nos permite hacer peticiones a nuestra api
+yarn add react-hook-form <- validación de formularios
+yarn add react-native-root-toast <- Mensajes de fodo
+# yarn add @expo/vector-icons (en teoría ya viene por defecto al crear proyecto y no es necesario)
+
+
+
+en babel.config.js
+tenemos que añadir en el return:
+ plugins: [ 
+	'react-native-reanimated/plugin
+],
+	

@@ -21,11 +21,9 @@ function NameSurnameForm({ insertNameSurname }) {
     const [surname, setSurname] = useState("")
 
     const handleSubmit = (e) => {
-        console.log("A")
         e.preventDefault() 
-        console.log("B")
         if (!name || !surname) return
-        insertNameSurname(name + " "+ surname)
+        insertNameSurname(name + " " + surname)
     }
 
     return (

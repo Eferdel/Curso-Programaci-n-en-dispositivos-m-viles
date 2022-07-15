@@ -1,0 +1,5 @@
+Para lanzar la aplicación:
+npm start
+
+Para instalar node-modules (los modules del proyecto recogidos en el json)
+npm install

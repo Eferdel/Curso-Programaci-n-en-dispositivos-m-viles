@@ -1,0 +1,29 @@
+Comandos para instalar las dependencias nativas:
+
+expo install expo-app-loading
+expo install expo-secure-store
+expo install expo-font @expo-google-fonts/lato
+expo install react-native-gesture-handler 
+expo install react-native-reanimated
+expo install react-native-screens 
+expo install react-native-safe-area-context
+expo install expo-constants
+
+Comandos para instalar las dependencias del cliente con yarn, si utilizas npm, reemplazar yarn add por npm install y yarn por npm install:
+
+yarn add @rneui/themed @rneui/base
+
+Si falla el anterior proceso de instalación de RNE entonces hacer lo siguiente:
+
+rm -rf node_modules yarn.lock package-lock.json
+yarn && yarn add @rneui/base @rneui/themedInstalar el resto de dependencias:
+
+yarn add react-native-extended-stylesheet
+yarn add @react-navigation/native
+yarn add @react-navigation/drawer
+yarn add @react-navigation/bottom-tabs
+yarn add @react-navigation/native-stack
+yarn add axios
+yarn add react-hook-form
+yarn add react-native-root-toast
+# yarn add @expo/vector-icons (en teoría ya viene por defecto al crear proyecto y no es necesario)

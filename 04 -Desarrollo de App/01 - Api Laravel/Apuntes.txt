@@ -1,0 +1,9 @@
+Las App móviles no se conectan con localhost, necesitan una dirección en red, por eso, en laravel podemos escribir:
+
+php artisan serve --host=192.168.0.15 --port=8000
+
+
+composer install -> instala todo lo que haya en composer.json
+php artisan <- similar a symfony CLI, pero para Laravel, gestor de terminal
+php artisan migrate:fresh --seed <- Permite, según las reglas definidas en database/seed, poblar la database
+php artisan migrate <- Realiza las migraciones de database/migrate

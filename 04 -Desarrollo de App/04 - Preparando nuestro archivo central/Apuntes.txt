@@ -1,0 +1,89 @@
+01
+Los Hooks no son de react native, son solo de react
+ - usememo <- memoriazar funciones costosas en vez de llamarlas en cada renderizado
+ - usestate <- ya lo conocemos
+ - usreducer <- cuando en nuestro estado tenemos objetos complejos y queremos actualizarlos de forma independiente.
+ - useefect <- llamar a una api antes de renderizar un componente
+ - usecontext <- pasar valores a componentes profundamente aninados.
+ 
+
+
+02
+app.config.js es el manifiesto de la APP, contiene varaibles a las que podremos acceder más tarde
+se usa para extender la propiedades de app.json, haciendo uso de javascript, que nos aporta más riqueza
+
+para usarlas, en el return de App.js escribimos
+
+App.defaultProps = {
+  appName: Constants.manifest.name + '®' || "",
+}
+
+es necesario recargar la aplicación en el móvil
+
+03
+themes->metrics.js
+archivo que vamos a utilizar para ajustar el tema (fuentes, esencialmente) a la dimensión de la pantalla
+
+Objeto: 
+const metrics = {
+    screenWidth: width < height ? width : height,   <- Propiedad
+    calc (size) {                                   <- Función
+        return metrics.screenWidth * (size / 365)
+    }
+}
+
+¿por qué se divide entre 365?
+
+themes->index.js
+lleva a cabo las tareas de dicho directorio
+
+04
+App.js renderiza la aplicación completa
+    ha de ser fácil de leer, con una configuración clara
+
+    La base para nuestra App son todas las dependencias, creadas por nosotros o no, que vamos a utilizar:
+
+//Dependencias que no son nuestras, no las hemos escrito nosotros
+
+import React, { useEffect, useState } from 'react';
+import { useFonts, Lato_100Thin, Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
+import { Asset } from "expo-asset"; // descargar de forma asíncrona assest cosas como el logo de la aplicación pra la pastallas de login y registro
+import EStyleSheet from "react-native-extended-stylesheet"; //En vez de usar build, en theme/index.js aquí usaremos el método create, que nos dará acceso a todas las variables que hemos definido nostors antes
+import * as SplashScreen from 'expo-splash-screen'; //Está dentro de node-modules, nos da acceso a todo lo que hayamso definido en splash screen
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from "expo-constants";
+
+//Dependencias que hemos realizado nosotros
+require("./src/theme")
+
+05
+Expo-splash-screen
+El splash screen se ocurta automáticamente al cargar la aplicación, sin embargo, puede que el contenido de la aplicación no esté disponible (contenido asíncrono)
+Por tanto, deberíamos de mantener el splash hasta que se resuelva la petición
+ver App.js
+Basícamente, se impide que se quite automáticamente mediante una promesa
+se lanza otra promesa para saber si ya ha cargado
+Una vez resuelta esa promesa, terminamos
+
+06
+Fuentes
+hacemos un import de las fuentes
+y usamos el hook usefont para poder hacer uso de ellas
+
+**** si algo falla y el código está correcto, podemos hacer los siguiente:
+ - probar con otro emludor
+ - reinstalar expo
+ - borrar node_modules e instalar de nuevo (npm install)
+ - borrar package-lock.json
+ - volver a montar la aplicación con expo r -c
+ 
+ 07
+ Recursos en la cache
+ se define una Función
+ _cacheResourcesAsync y con la librería Asset, metemos lo que necesitemos mediante promesas
+
+ 08
+ Aplicando estilos globales
+ Se aplica una consante "styles" donde creamos lo qe necesitemos (container, text, etc)
+ donde queramos usarlos, escribimos dentro de las etiquietas html:
+  style = {styles.text} o similar

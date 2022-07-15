@@ -1,0 +1,51 @@
+Expo: poder crear app hibridas con REACT y luego publicarlas sin robleas en ambas plataformas
+
+https://expo.dev/tools
+
+- iniciar un proyecto cualquira
+npm install --global expo-cli
+
+- Instalar modulos para el proyecto
+expo init my-app
+	- minimo
+	- tabs con typescript (con ya pestañitas)
+	- blank con typescript
+	- blank *
+* expo init my-app --npm (para no tener que instalar yarn)
+
+- Iniciar la aplicación
+expo start
+
+Para poder ejecutar nuestra app directamente en nuestro dipositivo usamos expo go
+
+Revisar la documnetación: https://docs.expo.dev/
+
+*descargar expo go
+*registrarse en expo
+
+así podemos publicar directamente en la tienda
+
+expo-cli <- gestor de terminal (ya instalada)
+
+****Por hacer****
+lanzar la aplicación
+
+expo r -c (r, de run, y -c que no esté cacheada la app)
+
+el código QR se puede ver desde expogo
+
+También se pueden usar emuladores desde el propio expo
+
+****Por hacer****
+Entrar en Canva.com para generar el splash (pantalla de carga) y el icono de la aplicación
+israel965
+1284x2778 png (splash)
+1024x1024 png (icono)
+reemplazar en la carpeta assets
+
+****Herramientas de debug****
+desde elpropio telefono, o app, sacundiendolo?? mirar infor 
+
+https://reactnative.dev/docs/debugging
+
+

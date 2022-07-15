@@ -1,0 +1,25 @@
+Composer es el gestor de paquetes de Php, algo parecido a NPM para JavaScript.
+
+Para instalar las dependencias del proyecto API Laravel Final deberás ejecutar el comando composer install dentro del proyecto. Para ello, primero debes instalar composer.
+
+Instalar composer en Windows
+Simplemente descarga y ejecuta el siguiente ejecutable: https://getcomposer.org/Composer-Setup.exe
+
+Instalar composer en Mac
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew install composer
+
+Instalar composer en Linux
+sudo apt-get update
+sudo apt-get install curl php-cli php-mbstring git unzip
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
+
+Ejecutar composer desde un terminal
+Una vez tengas instalado Composer en tu computadora, podrás ejecutar el comando composer install dentro del proyecto Api utilizando un terminal.
+La mejor opción es utilizar PhpStorm, abre el proyecto Api Laravel Final con PhpStorm, pulsa dos veces seguidas la tecla shift y verás algo como lo siguiente:
+
+En ese buscador simplemente escribe terminal y deberás ver algo como lo siguiente:
+
+Simplemente pulsa la opción Terminal F12 y verás que se abre un nuevo terminal desde donde ya podrás ejecutar el comando composer install para instalar todas las dependencias del proyecto. 
